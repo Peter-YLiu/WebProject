@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI 预测平台</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <div class="logo">
+                <h1>bioai-global</h1>
+                <h2>贝芸科技</h2>
+            </div>
+            <nav class="nav">
+                <a href="{{ url_for('auth.login') }}">登录</a>
+                <a href="http://www.bioai-global.com">联系我们</a>
+            </nav>
+        </div>
+    </header>
+    <div class="hero">
+        <div class="hero-content">
+            <h2>AI药物发现平台</h2>
+            <p>拥有自主知识产权的核心算法，一站式完成苗头化合物发现</p>
+        </div>
+    </div>
+</body>
+</html>

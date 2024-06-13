@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>注册</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <div class="logo">
+                <h1>bioai-global</h1>
+                <h2>贝芸科技</h2>
+            </div>
+        </div>
+    </header>
+    <div class="login-container">
+        <div class="login-box">
+            <h3>注册</h3>
+            <form method="POST" action="{{ url_for('auth.register') }}">
+                {{ form.hidden_tag() }}
+                <div>{{ form.email.label }} {{ form.email(size=32) }}</div>
+                <div>{{ form.username.label }} {{ form.username(size=32) }}</div>
+                <div>{{ form.password.label }} {{ form.password(size=32) }}</div>
+                <div>{{ form.password2.label }} {{ form.password2(size=32) }}</div>
+                {{ form.submit(class_="btn btn-primary") }}
+            </form>
+            <p>已经有账号了？<a href="{{ url_for('auth.login') }}">登录</a></p>
+        </div>
+    </div>
+</body>
+</html>
