@@ -5,36 +5,37 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>DockingVS</title>
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
-    <style>
-        body {
-            background-color: #f5f5f7;
-        }
-        .header {
-            background-color: #000;
-            padding: 20px;
-        }
-        .header h1 {
-            color: #fff;
-        }
-        .content {
-            margin: 20px;
-        }
-    </style>
+    <link href="{{ url_for('static', filename='css/docking_vs.css') }}" rel="stylesheet">
 </head>
 <body>
-    <div class="header">
-        <h1 class="text-center">DockingVS</h1>
-    </div>
+    <nav class="navbar">
+        <div class="brand">
+            <h1>bioal- global</h1>
+            <h2>贝芸科技</h2>
+        </div>
+        <div class="ml-auto">
+            <a href="{{ url_for('main.user_profile') }}" class="btn btn-info">用户管理</a>
+            <a href="{{ url_for('auth.logout') }}" class="btn btn-danger">登出</a>
+        </div>
+    </nav>
     <div class="content container">
-        <h2>分子对接</h2>
-        <p>高效的分子对接工具。</p>
-        <form method="post" enctype="multipart/form-data">
-            <div class="form-group">
-                <label for="file">选择文件</label>
-                <input type="file" class="form-control-file" id="file" name="file">
+        <div class="page-box">
+            <h1 class="page-title">DockingVS</h1>
+            <div class="page-content">
+                <h2>分子对接</h2>
+                <p>高效的分子对接工具。</p>
+                <form method="post" enctype="multipart/form-data">
+                    <div class="form-group">
+                        <label for="file">选择文件</label>
+                        <input type="file" class="form-control-file" id="file" name="file">
+                    </div>
+                    <button type="submit" class="btn btn-primary">上传并分析</button>
+                </form>
             </div>
-            <button type="submit" class="btn btn-primary">上传并对接</button>
-        </form>
+        </div>
     </div>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.amazonaws.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </body>
 </html>

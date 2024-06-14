@@ -1,0 +1,77 @@
+body {
+    background-image: url('/static/images/biotech.jpg');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    color: white;
+    font-family: Arial, sans-serif;
+}
+
+.navbar {
+    background-color: rgba(0, 0, 0, 0.7);
+    padding: 10px 20px;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+}
+
+.navbar h1, .navbar h2 {
+    margin: 0;
+    font-family: 'Arial Rounded MT Bold', sans-serif;
+}
+
+.navbar .brand {
+    display: flex;
+    flex-direction: column;
+}
+
+.navbar a {
+    color: white;
+    text-decoration: none;
+    margin-left: 20px;
+}
+
+.content {
+    margin-top: 100px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.page-box {
+    background-color: rgba(0, 0, 0, 0.8);
+    border-radius: 15px;
+    padding: 20px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+    max-width: 800px;
+    width: 100%;
+}
+
+.page-title {
+    font-size: 36px;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.page-content {
+    padding: 20px;
+}
+
+.page-content p {
+    font-size: 18px;
+    line-height: 1.6;
+}
+
+.form-group label {
+    color: white;
+}
+
+.table {
+    background-color: rgba(255, 255, 255, 0.9);
+    color: black;
+}
+
+.table th, .table td {
+    color: black;
+}

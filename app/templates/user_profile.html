@@ -5,69 +5,52 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>User Profile</title>
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
-    <style>
-        body {
-            background-color: #f5f5f7;
-        }
-        .header {
-            background-color: #000;
-            padding: 20px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-        .header h1 {
-            color: #fff;
-            margin: 0;
-        }
-        .header a {
-            color: #fff;
-            text-decoration: none;
-        }
-        .content {
-            margin: 20px;
-        }
-        .card {
-            margin: 20px 0;
-        }
-        .table {
-            margin-top: 20px;
-        }
-    </style>
+    <link href="{{ url_for('static', filename='css/user_profile.css') }}" rel="stylesheet">
 </head>
 <body>
-    <div class="header">
-        <h1>User Profile</h1>
-        <div>
-            <a href="{{ url_for('main.dashboard') }}" class="mr-3">Dashboard</a>
-            <a href="{{ url_for('auth.logout') }}" class="btn btn-danger">Logout</a>
+    <nav class="navbar">
+        <div class="brand">
+            <h1>bioal- global</h1>
+            <h2>贝芸科技</h2>
+        </div>
+        <div class="ml-auto">
+            <a href="{{ url_for('main.dashboard') }}" class="btn btn-info">Dashboard</a>
+            <a href="{{ url_for('auth.logout') }}" class="btn btn-danger">登出</a>
+        </div>
+    </nav>
+    <div class="content container">
+        <div class="page-box">
+            <h1 class="page-title">User Profile</h1>
+            <div class="page-content">
+                <h2>个人信息</h2>
+                <p><strong>用户名：</strong> {{ current_user.username }}</p>
+                <p><strong>邮箱：</strong> {{ current_user.email }}</p>
+                <h2>上传的文件</h2>
+                <table class="table table-striped">
+                    <thead>
+                        <tr>
+                            <th>文件名</th>
+                            <th>功能</th>
+                            <th>状态</th>
+                            <th>结果</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for file in files %}
+                        <tr>
+                            <td>{{ file.filename }}</td>
+                            <td>{{ file.function }}</td>
+                            <td>{{ file.status }}</td>
+                            <td>{{ file.result }}</td>
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
         </div>
     </div>
-    <div class="content container">
-        <h2>个人信息</h2>
-        <p><strong>用户名：</strong> {{ current_user.username }}</p>
-        <p><strong>邮箱：</strong> {{ current_user.email }}</p>
-        <h2>上传的文件</h2>
-        <table class="table table-striped">
-            <thead>
-                <tr>
-                    <th>文件名</th>
-                    <th>功能</th>
-                    <th>状态</th>
-                    <th>结果</th>
-                </tr>
-            </thead>
-            <tbody>
-                {% for file in files %}
-                <tr>
-                    <td>{{ file.filename }}</td>
-                    <td>{{ file.function }}</td>
-                    <td>{{ file.status }}</td>
-                    <td>{{ file.result }}</td>
-                </tr>
-                {% endfor %}
-            </tbody>
-        </table>
-    </div>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.amazonaws.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </body>
 </html>

@@ -5,80 +5,53 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dashboard</title>
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
-    <style>
-        body {
-            background-color: #f5f5f7;
-        }
-        .header {
-            background-color: #000;
-            padding: 20px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-        .header h1 {
-            color: #fff;
-            margin: 0;
-        }
-        .header a {
-            color: #fff;
-            text-decoration: none;
-        }
-        .content {
-            margin: 20px;
-        }
-        .card {
-            margin: 20px 0;
-        }
-    </style>
+    <link href="{{ url_for('static', filename='css/dashboard.css') }}" rel="stylesheet">
 </head>
 <body>
-    <div class="header">
-        <h1>Dashboard</h1>
-        <div>
-            <a href="{{ url_for('main.user_profile') }}" class="mr-3">Profile</a>
-            <a href="{{ url_for('auth.logout') }}" class="btn btn-danger">Logout</a>
+    <nav class="navbar">
+        <div class="brand">
+            <h1>bioal- global</h1>
+            <h2>贝芸科技</h2>
         </div>
-    </div>
+        <div class="ml-auto">
+            <a href="{{ url_for('main.user_profile') }}" class="btn btn-info">用户管理</a>
+            <a href="{{ url_for('auth.logout') }}" class="btn btn-danger">登出</a>
+        </div>
+    </nav>
     <div class="content container">
         <div class="row">
-            <div class="col-md-6">
+            <div class="col-md-6 mb-4">
                 <div class="card">
-                    <div class="card-body">
-                        <h5 class="card-title">PyaiVS (人工智能分类模型)</h5>
-                        <p class="card-text">通过人工智能实现快速准确的分类。</p>
-                        <a href="{{ url_for('main.pyai_vs') }}" class="btn btn-primary">Go to PyaiVS</a>
-                    </div>
+                    <h2>PyaiVS (人工智能分类模型)</h2>
+                    <p>通过人工智能实现快速准确的分类。</p>
+                    <a href="{{ url_for('main.pyai_vs') }}" class="btn btn-primary">Go to PyaiVS</a>
                 </div>
             </div>
-            <div class="col-md-6">
+            <div class="col-md-6 mb-4">
                 <div class="card">
-                    <div class="card-body">
-                        <h5 class="card-title">Psearch (药效团模型)</h5>
-                        <p class="card-text">基于药效团模型的药物搜索。</p>
-                        <a href="{{ url_for('main.psearch') }}" class="btn btn-primary">Go to Psearch</a>
-                    </div>
+                    <h2>Psearch (药效团模型)</h2>
+                    <p>基于药效团模型的药物搜索。</p>
+                    <a href="{{ url_for('main.psearch') }}" class="btn btn-primary">Go to Psearch</a>
                 </div>
             </div>
-            <div class="col-md-6">
+            <div class="col-md-6 mb-4">
                 <div class="card">
-                    <div class="card-body">
-                        <h5 class="card-title">DockingVS (分子对接)</h5>
-                        <p class="card-text">高效的分子对接工具。</p>
-                        <a href="{{ url_for('main.docking_vs') }}" class="btn btn-primary">Go to DockingVS</a>
-                    </div>
+                    <h2>DockingVS (分子对接)</h2>
+                    <p>高效的分子对接工具。</p>
+                    <a href="{{ url_for('main.docking_vs') }}" class="btn btn-primary">Go to DockingVS</a>
                 </div>
             </div>
-            <div class="col-md-6">
+            <div class="col-md-6 mb-4">
                 <div class="card">
-                    <div class="card-body">
-                        <h5 class="card-title">L-Score (对接后重打分)</h5>
-                        <p class="card-text">精确的对接后评分工具。</p>
-                        <a href="{{ url_for('main.l_score') }}" class="btn btn-primary">Go to L-Score</a>
-                    </div>
+                    <h2>L-Score (对接后重打分)</h2>
+                    <p>精确的对接后评分工具。</p>
+                    <a href="{{ url_for('main.l_score') }}" class="btn btn-primary">Go to L-Score</a>
                 </div>
             </div>
         </div>
     </div>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </body>
 </html>
