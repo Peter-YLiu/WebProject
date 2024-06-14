@@ -18,9 +18,12 @@ class User(UserMixin, db.Model):
         return check_password_hash(self.password_hash, password)
 
 class FileRecord(db.Model):
+    __tablename__ = 'filerecord'
     id = db.Column(db.Integer, primary_key=True)
     filename = db.Column(db.String(128), nullable=False)
     user_id = db.Column(db.Integer, db.ForeignKey('user.id'), nullable=False)
     status = db.Column(db.String(64), nullable=False, default='已上传')
     result = db.Column(db.String(128), nullable=True)
+    function = db.Column(db.String(64), nullable=False)
     user = db.relationship('User', backref=db.backref('files', lazy=True))
+

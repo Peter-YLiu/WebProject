@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PyaiVS</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            background-color: #f5f5f7;
+        }
+        .header {
+            background-color: #000;
+            padding: 20px;
+        }
+        .header h1 {
+            color: #fff;
+        }
+        .content {
+            margin: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1 class="text-center">PyaiVS</h1>
+    </div>
+    <div class="content container">
+        <h2>人工智能分类模型</h2>
+        <p>通过人工智能实现快速准确的分类。</p>
+        <form method="post" enctype="multipart/form-data">
+            <div class="form-group">
+                <label for="file">选择文件</label>
+                <input type="file" class="form-control-file" id="file" name="file">
+            </div>
+            <button type="submit" class="btn btn-primary">上传并分析</button>
+        </form>
+    </div>
+</body>
+</html>

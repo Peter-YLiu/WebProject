@@ -21,11 +21,20 @@ class RegistrationForm(FlaskForm):
         if user is not None:
             raise ValidationError('用户名已存在，请选择其他用户名。')
 
+
 class LoginForm(FlaskForm):
     email = StringField('邮箱', validators=[DataRequired(), Email()])
     password = PasswordField('密码', validators=[DataRequired()])
-    submit = SubmitField('登录')
+    submit = SubmitField('登陆')
+
+class RegistrationForm(FlaskForm):
+    email = StringField('邮箱', validators=[DataRequired(), Email()])
+    username = StringField('用户名', validators=[DataRequired()])
+    password = PasswordField('密码', validators=[DataRequired()])
+    password2 = PasswordField(
+        '重复密码', validators=[DataRequired(), EqualTo('密码')])
+    submit = SubmitField('注册')
 
 class UploadForm(FlaskForm):
-    file = FileField('文件', validators=[DataRequired()])
-    submit = SubmitField('上传')
+    file = FileField('File', validators=[DataRequired()])
+    submit = SubmitField('Upload')

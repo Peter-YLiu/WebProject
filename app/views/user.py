@@ -15,4 +15,4 @@ def user_management():
     files = [
         {"filename": "example_file.txt", "status": "Processed"}
     ]
-    return render_template('user_management.html', files=files)
+    return render_template('user_profile.html', files=files)

@@ -1,16 +1,84 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dashboard</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            background-color: #f5f5f7;
+        }
+        .header {
+            background-color: #000;
+            padding: 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .header h1 {
+            color: #fff;
+            margin: 0;
+        }
+        .header a {
+            color: #fff;
+            text-decoration: none;
+        }
+        .content {
+            margin: 20px;
+        }
+        .card {
+            margin: 20px 0;
+        }
+    </style>
 </head>
 <body>
-    <h1>Welcome to the Dashboard</h1>
-    <nav>
-        <a href="{{ url_for('main.function1') }}">Function 1</a>
-        <a href="{{ url_for('main.function2') }}">Function 2</a>
-        <a href="{{ url_for('main.function3') }}">Function 3</a>
-        <a href="{{ url_for('main.function4') }}">Function 4</a>
-        <a href="{{ url_for('user.user_management') }}">User Management</a>
-    </nav>
+    <div class="header">
+        <h1>Dashboard</h1>
+        <div>
+            <a href="{{ url_for('main.user_profile') }}" class="mr-3">Profile</a>
+            <a href="{{ url_for('auth.logout') }}" class="btn btn-danger">Logout</a>
+        </div>
+    </div>
+    <div class="content container">
+        <div class="row">
+            <div class="col-md-6">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">PyaiVS (人工智能分类模型)</h5>
+                        <p class="card-text">通过人工智能实现快速准确的分类。</p>
+                        <a href="{{ url_for('main.pyai_vs') }}" class="btn btn-primary">Go to PyaiVS</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">Psearch (药效团模型)</h5>
+                        <p class="card-text">基于药效团模型的药物搜索。</p>
+                        <a href="{{ url_for('main.psearch') }}" class="btn btn-primary">Go to Psearch</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">DockingVS (分子对接)</h5>
+                        <p class="card-text">高效的分子对接工具。</p>
+                        <a href="{{ url_for('main.docking_vs') }}" class="btn btn-primary">Go to DockingVS</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">L-Score (对接后重打分)</h5>
+                        <p class="card-text">精确的对接后评分工具。</p>
+                        <a href="{{ url_for('main.l_score') }}" class="btn btn-primary">Go to L-Score</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 </body>
 </html>

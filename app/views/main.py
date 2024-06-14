@@ -6,7 +6,7 @@ from app.forms import UploadForm
 import os
 from werkzeug.utils import secure_filename
 
-main_bp = Blueprint('main', __name__)  # 确保这里没有设置静态文件夹路径
+main_bp = Blueprint('main', __name__)
 
 UPLOAD_FOLDER = 'path/to/upload/folder'
 
@@ -19,66 +19,73 @@ def index():
 def dashboard():
     return render_template('dashboard.html')
 
-@main_bp.route('/function1', methods=['GET', 'POST'])
+@main_bp.route('/pyai_vs', methods=['GET', 'POST'])
 @login_required
-def function1():
+def pyai_vs():
     form = UploadForm()
     if form.validate_on_submit():
         file = form.file.data
         filename = secure_filename(file.filename)
         file.save(os.path.join(UPLOAD_FOLDER, filename))
-        new_file = FileRecord(filename=filename, user_id=current_user.id, status='已上传')
+        new_file = FileRecord(filename=filename, user_id=current_user.id, status='已上传', function='PyaiVS')
         db.session.add(new_file)
         db.session.commit()
         flash('文件上传成功')
         # TODO: 启动文件处理脚本
-        return redirect(url_for('main.function1'))
-    return render_template('function1.html', form=form)
+        return redirect(url_for('main.pyai_vs'))
+    return render_template('pyai_vs.html', form=form)
 
-@main_bp.route('/function2', methods=['GET', 'POST'])
+@main_bp.route('/psearch', methods=['GET', 'POST'])
 @login_required
-def function2():
+def psearch():
     form = UploadForm()
     if form.validate_on_submit():
         file = form.file.data
         filename = secure_filename(file.filename)
         file.save(os.path.join(UPLOAD_FOLDER, filename))
-        new_file = FileRecord(filename=filename, user_id=current_user.id, status='已上传')
+        new_file = FileRecord(filename=filename, user_id=current_user.id, status='已上传', function='Psearch')
         db.session.add(new_file)
         db.session.commit()
         flash('文件上传成功')
         # TODO: 启动文件处理脚本
-        return redirect(url_for('main.function2'))
-    return render_template('function2.html', form=form)
+        return redirect(url_for('main.psearch'))
+    return render_template('psearch.html', form=form)
 
-@main_bp.route('/function3', methods=['GET', 'POST'])
+@main_bp.route('/docking_vs', methods=['GET', 'POST'])
 @login_required
-def function3():
+def docking_vs():
     form = UploadForm()
     if form.validate_on_submit():
         file = form.file.data
         filename = secure_filename(file.filename)
         file.save(os.path.join(UPLOAD_FOLDER, filename))
-        new_file = FileRecord(filename=filename, user_id=current_user.id, status='已上传')
+        new_file = FileRecord(filename=filename, user_id=current_user.id, status='已上传', function='DockingVS')
         db.session.add(new_file)
         db.session.commit()
         flash('文件上传成功')
         # TODO: 启动文件处理脚本
-        return redirect(url_for('main.function3'))
-    return render_template('function3.html', form=form)
+        return redirect(url_for('main.docking_vs'))
+    return render_template('docking_vs.html', form=form)
 
-@main_bp.route('/function4', methods=['GET', 'POST'])
+@main_bp.route('/l_score', methods=['GET', 'POST'])
 @login_required
-def function4():
+def l_score():
     form = UploadForm()
     if form.validate_on_submit():
         file = form.file.data
         filename = secure_filename(file.filename)
         file.save(os.path.join(UPLOAD_FOLDER, filename))
-        new_file = FileRecord(filename=filename, user_id=current_user.id, status='已上传')
+        new_file = FileRecord(filename=filename, user_id=current_user.id, status='已上传', function='L-Score')
         db.session.add(new_file)
         db.session.commit()
         flash('文件上传成功')
         # TODO: 启动文件处理脚本
-        return redirect(url_for('main.function4'))
-    return render_template('function4.html', form=form)
+        return redirect(url_for('main.l_score'))
+    return render_template('l_score.html', form=form)
+
+@main_bp.route('/user_profile')
+@login_required
+def user_profile():
+    files = FileRecord.query.filter_by(user_id=current_user.id).all()
+    return render_template('user_profile.html', files=files)
+
