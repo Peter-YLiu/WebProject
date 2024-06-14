@@ -14,8 +14,7 @@ if not os.path.exists(UPLOAD_FOLDER):
 ALLOWED_EXTENSIONS = {'sdf', 'csv', 'pdb', 'pdbqt', 'mol2'}
 
 def allowed_file(filename):
-    return '.' in filename and \
-           filename.rsplit('.', 1)[1].lower() in ALLOWED_EXTENSIONS
+    return '.' in filename and filename.rsplit('.', 1)[1].lower() in ALLOWED_EXTENSIONS
 
 @main_bp.route('/')
 def index():
@@ -45,7 +44,6 @@ def pyai_vs():
             db.session.add(new_file)
             db.session.commit()
             flash('文件上传成功')
-            # TODO: 发送文件给远程机器进行处理
             return redirect(url_for('main.pyai_vs'))
     return render_template('pyai_vs.html')
 
@@ -68,7 +66,6 @@ def psearch():
             db.session.add(new_file)
             db.session.commit()
             flash('文件上传成功')
-            # TODO: 发送文件给远程机器进行处理
             return redirect(url_for('main.psearch'))
     return render_template('psearch.html')
 
@@ -91,7 +88,6 @@ def docking_vs():
             db.session.add(new_file)
             db.session.commit()
             flash('文件上传成功')
-            # TODO: 发送文件给远程机器进行处理
             return redirect(url_for('main.docking_vs'))
     return render_template('docking_vs.html')
 
@@ -114,7 +110,6 @@ def l_score():
             db.session.add(new_file)
             db.session.commit()
             flash('文件上传成功')
-            # TODO: 发送文件给远程机器进行处理
             return redirect(url_for('main.l_score'))
     return render_template('l_score.html')
 
