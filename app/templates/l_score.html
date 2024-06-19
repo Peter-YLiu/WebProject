@@ -32,6 +32,16 @@
                     <input type="hidden" name="process_type" value="l_score">
                     <button type="submit" class="btn btn-primary">上传并评分</button>
                 </form>
+                <br>
+                {% with messages = get_flashed_messages() %}
+                  {% if messages %}
+                    <div class="alert alert-info">
+                      {% for message in messages %}
+                        <p>{{ message }}</p>
+                      {% endfor %}
+                    </div>
+                  {% endif %}
+                {% endwith %}
             </div>
         </div>
     </div>

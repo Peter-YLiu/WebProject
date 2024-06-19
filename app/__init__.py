@@ -1,6 +1,7 @@
 from flask import Flask
 from flask_sqlalchemy import SQLAlchemy
 from flask_login import LoginManager
+from flask_cors import CORS
 from config import Config
 
 db = SQLAlchemy()
@@ -13,6 +14,7 @@ def create_app(config_class=Config):
 
     db.init_app(app)
     login.init_app(app)
+    CORS(app)  # 启用CORS
 
     from app.models import User  # 导入 User 模型
 
@@ -29,5 +31,3 @@ def create_app(config_class=Config):
         return User.query.get(int(user_id))
 
     return app
-
-

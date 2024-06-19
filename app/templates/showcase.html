@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <title>展示页</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet"/>
+    <link href="{{ url_for('static', filename='css/showcase.css') }}" rel="stylesheet"/>
+</head>
+<body>
+<nav class="navbar navbar-expand-lg" style="background: rgba(50, 50, 50, 0.7);">
+    <div class="brand">
+        <h1 style="color: white;">BioAL Global</h1>
+        <h2 style="color: white;">贝芸科技</h2>
+    </div>
+    <div class="ml-auto">
+        <a class="btn btn-info" href="{{ url_for('main.dashboard') }}">功能页</a>
+        <a class="btn btn-danger" href="{{ url_for('auth.logout') }}">登出</a>
+    </div>
+</nav>
+<div class="center-wrapper">
+    <div class="center-circle">
+        <img alt="主题" class="circle-img" src="{{ url_for('static', filename='images/central.jpg') }}"/>
+    </div>
+    <div class="outer-image image-3">
+        <img alt="神经系统性疾病" class="image-circle" src="{{ url_for('static', filename='images/neuro.jpg') }}"/>
+        <div class="description neuro-description">
+            神经系统疾病对全球超过三分之一的人造成影响，是致病、致残的主要原因，将成为人类死亡的第二大原因。
+        </div>
+    </div>
+    <div class="outer-image image-6">
+        <img alt="呼吸系统性疾病" class="image-circle" src="{{ url_for('static', filename='images/respiratory.jpg') }}"/>
+        <div class="description respiratory-description">
+            呼吸系统和肺部疾病药物行业市场规模不断扩大，预计2030年市场规模将达到1837亿美元。
+        </div>
+    </div>
+    <div class="outer-image image-9">
+        <img alt="癌症" class="image-circle" src="{{ url_for('static', filename='images/cancer.jpg') }}" data-toggle="modal" data-target="#cancerModal"/>
+        <div class="description cancer-description">
+            癌症是人类健康的第一杀手。2030年全球将有1320万人死于癌症，且1/4在中国。预计2027年全球肿瘤药物支出达到3750亿美元。
+        </div>
+    </div>
+</div>
+
+<!-- Cancer Modal -->
+<div class="modal fade" id="cancerModal" tabindex="-1" role="dialog" aria-labelledby="cancerModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="cancerModalLabel">癌症类型和治病因素</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <table class="table table-striped table-bordered">
+            <thead>
+                <tr>
+                    <th>癌症</th>
+                    <th>常见类型</th>
+                    <th>治病因素</th>
+                </tr>
+            </thead>
+            <tbody>
+                    <tr data-toggle="modal" data-target="#targetTypeModal" data-dismiss="modal">
+                        <td>肺癌</td>
+                        <td>非小细胞肺腺癌、非小细胞肺鳞癌、小细胞肺癌</td>
+                        <td>长期吸烟、氡气、大气污染、二手烟、基因等</td>
+                    </tr>
+                    <tr data-toggle="modal" data-target="#targetTypeModal" data-dismiss="modal">
+                        <td>乳腺癌</td>
+                        <td>Luminal A型、Luminal B型（HER-2阴性）、Luminal B型（HER2阳性）</td>
+                        <td>激素水平、良性乳腺疾病、BRCA1/BRCA2基因突变等</td>
+                    </tr>
+                    <tr data-toggle="modal" data-target="#targetTypeModal" data-dismiss="modal">
+                        <td>胃癌</td>
+                        <td>胃腺癌、胃肠道质瘤、胃肠道平滑肌肉瘤</td>
+                        <td>烟熏与盐腌食品、幽门螺杆菌感染、胃息肉与胃炎胃部疾病等</td>
+                    </tr>
+                    <tr data-toggle="modal" data-target="#targetTypeModal" data-dismiss="modal">
+                        <td>肝癌</td>
+                        <td>原发性肝癌、继发性肝癌</td>
+                        <td>饮酒、抽烟、乙型/丙型肝炎、肝硬化、肥胖、糖尿病等</td>
+                    </tr>
+                    <tr data-toggle="modal" data-target="#targetTypeModal" data-dismiss="modal">
+                        <td>食管癌</td>
+                        <td>鳞癌、腺癌</td>
+                        <td>腌制食品、吸烟饮酒、HPV感染</td>
+                    </tr>
+                    <tr data-toggle="modal" data-target="#targetTypeModal" data-dismiss="modal">
+                        <td>结直肠癌</td>
+                        <td>CMS1-免疫浸润型、CMS2-经典型、CMS3-代谢型、CMS4-间质型</td>
+                        <td>饮食（大量红肉）、吸烟、肥胖、糖尿病、炎症性肠病等</td>
+                    </tr>
+                    <tr data-toggle="modal" data-target="#targetTypeModal" data-dismiss="modal">
+                        <td>卵巢癌</td>
+                        <td>交界性肿瘤、浆液性癌、内膜样癌、透明细胞癌、黏液性癌</td>
+                        <td>遗传、年龄、延迟生育、肥胖、不孕不育治疗等</td>
+                    </tr>
+                    <tr data-toggle="modal" data-target="#targetTypeModal" data-dismiss="modal">
+                        <td>白血病</td>
+                        <td>急性淋巴细胞性白血病、急性骨髓性白血病、慢性淋巴细胞性白血病、慢性骨髓细胞性白血病</td>
+                        <td>感染、辐射、化学制剂、生活方式和遗传等</td>
+                    </tr>
+                    <tr data-toggle="modal" data-target="#targetTypeModal" data-dismiss="modal">
+                        <td>淋巴瘤</td>
+                        <td>霍奇金淋巴瘤、非霍奇金淋巴瘤</td>
+                        <td>年龄过长、免疫系统受损、EB 病毒、幽门螺杆菌感染等</td>
+                    </tr>
+                    <tr data-toggle="modal" data-target="#targetTypeModal" data-dismiss="modal">
+                        <td>胰腺癌</td>
+                        <td>导管上皮腺癌、腺泡细胞癌、囊腺癌</td>
+                        <td>长期吸烟、II型糖尿病、肥胖症、过量饮酒等</td>
+                    </tr>
+                    <tr data-toggle="modal" data-target="#targetTypeModal" data-dismiss="modal">
+                        <td>肾癌</td>
+                        <td>肾细胞癌、移行细胞癌、肾肉瘤、肾母细胞癌</td>
+                        <td>长期吸烟、高血压、肥胖症等</td>
+                    </tr>
+                    <tr data-toggle="modal" data-target="#targetTypeModal" data-dismiss="modal">
+                        <td>脑瘤</td>
+                        <td>脑胶质肿瘤、垂体肿瘤、听神经肿瘤、血管网络细胞肿瘤、髓母细胞肿瘤</td>
+                        <td>年龄过长、种族因素、辐射等</td>
+                    </tr>
+                    <tr data-toggle="modal" data-target="#targetTypeModal" data-dismiss="modal">
+                        <td>前列腺癌</td>
+                        <td>潜伏癌、偶发癌、隐匿癌、临床癌</td>
+                        <td>长期吸烟、过度饮酒、肥胖、遗传等</td>
+                    </tr>
+                    <tr data-toggle="modal" data-target="#targetTypeModal" data-dismiss="modal">
+                        <td>甲状腺癌</td>
+                        <td>甲状腺乳头状癌、甲状腺滤泡癌、赫氏细胞癌</td>
+                        <td>低碘摄入量、辐射、遗传等</td>
+                    </tr>
+            </tbody>
+        </table>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">关闭</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Target Type Modal -->
+<div class="modal fade" id="targetTypeModal" tabindex="-1" role="dialog" aria-labelledby="targetTypeModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="targetTypeModalLabel">靶点类型</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body modal-body-scrollable">
+        <div class="container">
+          <div class="row">
+            <div class="col-md-6">
+              <img src="{{ url_for('static', filename='images/GPCR.jpg') }}" alt="GPCR" class="img-fluid" data-toggle="modal" data-target="#GPCRModal" data-dismiss="modal"/>
+              <h5>G蛋白偶联受体</h5>
+              <p>靶向药物的适应症广泛，如高血压、肥胖症、过敏...</p>
+            </div>
+            <div class="col-md-6">
+              <img src="{{ url_for('static', filename='images/ionChannel.jpg') }}" alt="Ion Channel" class="img-fluid"/>
+              <h5>离子通道</h5>
+              <p>细胞离子通道的结构和功能正常是维持生命的基础...</p>
+            </div>
+            <div class="col-md-6">
+              <img src="{{ url_for('static', filename='images/nuclearReceptor.jpg') }}" alt="Nuclear Receptor" class="img-fluid"/>
+              <h5>核激素受体</h5>
+              <p>核受体超家族是配体激活的转录因子，在细胞的分化、增殖和代谢中具有重要作用，并且与许多疾病相关，如心血管疾病、类风湿性关节炎、哮喘、激素抵抗综合征和癌症等。</p>
+            </div>
+            <div class="col-md-6">
+              <img src="{{ url_for('static', filename='images/kinase.jpg') }}" alt="Kinase" class="img-fluid"/>
+              <h5>激酶</h5>
+              <p>蛋白激酶（PKs）属于激酶家族，是一种磷酸转移酶，在基因表达、细胞增殖、分化、凋亡、信号转导、免疫调节、肿瘤发生等各个方面发挥着重要作用，与从癌症到炎症性疾病、糖尿病、感染性疾病、神经系统疾病、神经退行性疾病和心脏功能障碍有关。</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">关闭</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<!-- GPCR Modal -->
+<div class="modal fade" id="GPCRModal" tabindex="-1" role="dialog" aria-labelledby="GPCRModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="GPCRModalLabel">腺苷A3受体</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body modal-body-scrollable">
+        <div class="container">
+          <div class="row">
+            <div class="col-md-12">
+              <h5>分布及功能</h5>
+              <p>腺苷A3受体（A3AR）广泛表达在人体的大脑、心脏、肺、肝脏、肾脏以及免疫细胞等多种组织细胞中。A3AR不仅参与调节心脏功能、血管舒张，还具备抑制炎症、防止缺血再灌注损伤等多重功能。根据近期的研究发现，A3AR在人肝细胞癌细胞（HCC）中过度表达，因此认为A3AR是针对肝癌的新靶点。</p>
+              <h5>靶向药物</h5>
+              <p>2022年8月2日，灿菲特生物制药（Can-Fite BioPharma）宣布其正在研制的肝癌药物Namodenoson在罗马尼亚获批，Namodenoson是一种小型口服生物可利用药物，以高亲和力选择性地与A3腺苷受体（A3AR）结合，能够降低肝酶、抗炎、减少肝纤维化、肝脏防变性和NASH的发生。</p>
+            </div>
+            <div class="col-md-6">
+              <img src="{{ url_for('static', filename='images/A3AR_expression.jpg') }}" alt="A3AR Expression" class="img-fluid"/>
+              <p class="text-center">腺苷A3受体的表达</p>
+            </div>
+            <div class="col-md-6">
+              <img src="{{ url_for('static', filename='images/Namodenoson_structure.jpg') }}" alt="Namodenoson Structure" class="img-fluid"/>
+              <p class="text-center">Namodenoson的结构式</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">关闭</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+<script src="{{ url_for('static', filename='js/showcase.js') }}"></script>
+</body>
+</html>

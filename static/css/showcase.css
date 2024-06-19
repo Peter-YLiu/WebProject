@@ -1,0 +1,150 @@
+.modal-body-scrollable {
+    max-height: 70vh; /* 设置最大高度，防止超出屏幕 */
+    overflow-y: auto; /* 允许垂直滚动 */
+}
+
+body {
+    background-image: url('../images/biotech1.jpg');
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+.center-wrapper {
+    position: relative;
+    height: calc(100vh - 80px); /* 调整高度以适应导航栏 */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: -120px; /* 向上移动整体布局 */
+}
+
+.center-circle {
+    width: 350px; /* 调整大小 */
+    height: 350px; /* 调整大小 */
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden; /* 确保图片填满圆形 */
+    background: rgba(50, 50, 50, 0.7); /* 半透明深灰色 */
+    z-index: 5;
+}
+
+.circle-img {
+    width: 100%; /* 确保图片填满圆形 */
+    height: 100%; /* 确保图片填满圆形 */
+    object-fit: cover; /* 确保图片保持比例 */
+}
+
+.outer-image {
+    position: absolute;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: white;
+}
+
+.image-circle {
+    width: 200px; /* 调整大小 */
+    height: 200px; /* 调整大小 */
+    border-radius: 50%;
+    object-fit: cover; /* 确保图片保持比例 */
+    margin-bottom: 10px;
+}
+
+.image-3 {
+    transform: translateX(-180%); /* 左边圆，原位置 */
+}
+
+.image-6 {
+    transform: translateY(150%); /* 向上移动 */
+}
+
+.image-9 {
+    transform: translateX(180%); /* 右边圆，原位置 */
+}
+
+.description {
+    position: absolute;
+    background-color: rgba(255, 255, 255, 0.7);
+    color: black;
+    font-family: 'Arial', sans-serif;
+    border-radius: 5px;
+    text-align: center;
+}
+
+.neuro-description {
+    bottom: -60px;
+    left: 0;
+    width: 100%;
+}
+
+.respiratory-description {
+    top: 0;
+    left: -60%;
+    width: 50%;
+}
+
+.cancer-description {
+    bottom: -70px;
+    left: 0;
+    width: 100%;
+}
+
+.table {
+    width: 100%;
+    margin: 0;
+    border-collapse: collapse;
+    border-radius: 10px; /* 设置圆角 */
+    overflow: hidden; /* 确保圆角生效 */
+}
+
+.table th, .table td {
+    border: 1px solid #ddd;
+    padding: 8px;
+}
+
+.table th {
+    background-color: #f2f2f2;
+    text-align: left;
+}
+
+.table tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+.table tr:hover {
+    background-color: #ddd;
+}
+
+.table th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    background-color: #4CAF50;
+    color: white;
+}
+
+/* 调整第二列和第三列的宽度 */
+.table td:nth-child(2), .table th:nth-child(2) {
+    width: 30%; /* 调整宽度 */
+}
+
+.table td:nth-child(3), .table th:nth-child(3) {
+    width: 40%; /* 调整宽度 */
+}
+
+.text-center {
+    text-align: center;
+}
+
+/* 确保按钮在前面并且可点击 */
+.navbar {
+    z-index: 5; /* 确保导航栏在前面 */
+}
+
+.center-wrapper {
+    z-index: 1; /* 确保中心内容在导航栏后面 */
+}
+

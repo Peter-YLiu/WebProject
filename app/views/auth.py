@@ -24,8 +24,8 @@ def register():
 def login():
     print(f"Current user authenticated before processing: {current_user.is_authenticated}")
     if current_user.is_authenticated:
-        print("User is already authenticated, redirecting to dashboard.")
-        return redirect(url_for('main.dashboard'))
+        print("User is already authenticated, redirecting to showcase.")
+        return redirect(url_for('main.showcase'))
     form = LoginForm()
     if form.validate_on_submit():
         user = User.query.filter_by(email=form.email.data).first()
@@ -36,7 +36,7 @@ def login():
         login_user(user)
         print(f"Logged in as {user.email}, is authenticated: {current_user.is_authenticated}")
         flash('登录成功！')
-        return redirect(url_for('main.dashboard'))
+        return redirect(url_for('main.showcase'))
     else:
         print(f"Form not validated: {form.errors}")
     return render_template('auth/login.html', form=form)
@@ -47,4 +47,3 @@ def logout():
     logout_user()
     flash('You have been logged out.')
     return redirect(url_for('auth.login'))
-
