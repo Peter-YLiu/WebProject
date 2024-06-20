@@ -10,7 +10,7 @@
 <body>
     <nav class="navbar">
         <div class="brand">
-            <h1>bioal- global</h1>
+            <h1>bioal-global</h1>
             <h2>贝芸科技</h2>
         </div>
         <div class="ml-auto">
@@ -22,15 +22,28 @@
         <div class="page-box">
             <h1 class="page-title">DockingVS</h1>
             <div class="page-content">
-                <h2>分子对接</h2>
-                <p>高效的分子对接工具。</p>
+                <h2>分子对接虚拟筛选</h2>
+                <p>通过分子对接进行虚拟筛选。</p>
                 <form method="post" enctype="multipart/form-data">
                     <div class="form-group">
                         <label for="file">选择文件</label>
                         <input type="file" class="form-control-file" id="file" name="file">
                     </div>
                     <input type="hidden" name="process_type" value="docking_vs">
-                    <button type="submit" class="btn btn-primary">上传并对接</button>
+                    <button type="submit" class="btn btn-primary">上传并搜索</button>
+                </form>
+                <br>
+                <form method="post">
+                    <div class="form-group">
+                        <label for="target">选择靶点</label>
+                        <select class="form-control" id="target" name="target">
+                            <option value="CDK2">CDK2</option>
+                            <option value="A1AR">A1AR</option>
+                            <option value="A2AR">A2AR</option>
+                            <option value="A3AR">A3AR</option>
+                        </select>
+                    </div>
+                    <button type="submit" class="btn btn-primary" name="target_button">确定</button>
                 </form>
                 <br>
                 {% with messages = get_flashed_messages() %}

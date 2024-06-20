@@ -10,7 +10,7 @@
 <body>
     <nav class="navbar">
         <div class="brand">
-            <h1>bioal- global</h1>
+            <h1>bioal-global</h1>
             <h2>贝芸科技</h2>
         </div>
         <div class="ml-auto">
@@ -33,6 +33,19 @@
                     <button type="submit" class="btn btn-primary">上传并搜索</button>
                 </form>
                 <br>
+                <form method="post">
+                    <div class="form-group">
+                        <label for="target">选择靶点</label>
+                        <select class="form-control" id="target" name="target">
+                            <option value="CDK2">CDK2</option>
+                            <option value="A1AR">A1AR</option>
+                            <option value="A2AR">A2AR</option>
+                            <option value="A3AR">A3AR</option>
+                        </select>
+                    </div>
+                    <button type="submit" class="btn btn-primary" name="target_button">确定</button>
+                </form>
+                <br>
                 {% with messages = get_flashed_messages() %}
                   {% if messages %}
                     <div class="alert alert-info">
@@ -47,6 +60,6 @@
     </div>
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
-    <script src="https://stackpath.amazonaws.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="https://stackpath.bootstrap.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </body>
 </html>

@@ -1,7 +1,7 @@
 body {
     margin: 0;
     font-family: 'Arial Rounded MT Bold', sans-serif;
-    background: url('../images/biotech.jpg') no-repeat center center fixed;
+    background: url('../images/biotech1.jpg') no-repeat center center fixed;
     background-size: cover;
     color: white;
     height: 100vh;
@@ -96,7 +96,7 @@ body {
     font-size: 20px;
     color: white;
     text-decoration: none;
-    background: #007bff;
+    background: #837f7f;
     padding: 10px 20px;
     border-radius: 5px;
     display: block;
@@ -104,5 +104,5 @@ body {
 }
 
 .card a:hover {
-    background: #0056b3;
+    background: #3f3f3f;
 }

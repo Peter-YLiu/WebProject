@@ -3,14 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>L-Score</title>
+    <title>LScore</title>
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
     <link href="{{ url_for('static', filename='css/l_score.css') }}" rel="stylesheet">
 </head>
 <body>
     <nav class="navbar">
         <div class="brand">
-            <h1>bioal- global</h1>
+            <h1>bioal-global</h1>
             <h2>贝芸科技</h2>
         </div>
         <div class="ml-auto">
@@ -20,17 +20,30 @@
     </nav>
     <div class="content container">
         <div class="page-box">
-            <h1 class="page-title">L-Score</h1>
+            <h1 class="page-title">LScore</h1>
             <div class="page-content">
-                <h2>对接后重打分</h2>
-                <p>精确的对接后评分工具。</p>
+                <h2>打分模型</h2>
+                <p>通过打分模型进行虚拟筛选。</p>
                 <form method="post" enctype="multipart/form-data">
                     <div class="form-group">
                         <label for="file">选择文件</label>
                         <input type="file" class="form-control-file" id="file" name="file">
                     </div>
                     <input type="hidden" name="process_type" value="l_score">
-                    <button type="submit" class="btn btn-primary">上传并评分</button>
+                    <button type="submit" class="btn btn-primary">上传并分析</button>
+                </form>
+                <br>
+                <form method="post">
+                    <div class="form-group">
+                        <label for="target">选择靶点</label>
+                        <select class="form-control" id="target" name="target">
+                            <option value="CDK2">CDK2</option>
+                            <option value="A1AR">A1AR</option>
+                            <option value="A2AR">A2AR</option>
+                            <option value="A3AR">A3AR</option>
+                        </select>
+                    </div>
+                    <button type="submit" class="btn btn-primary" name="target_button">确定</button>
                 </form>
                 <br>
                 {% with messages = get_flashed_messages() %}
