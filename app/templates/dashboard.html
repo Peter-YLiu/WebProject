@@ -8,58 +8,68 @@
     <link href="{{ url_for('static', filename='css/dashboard.css') }}" rel="stylesheet">
 </head>
 <body>
-    <nav class="navbar">
-        <div class="brand">
-            <h1>bioal-global</h1>
-            <h2>贝芸科技</h2>
+    <header>
+        <div class="logo">
+            <img src="{{ url_for('static', filename='images/beiyun.png') }}" alt="Logo">
+            <span>贝芸药物预测架构</span>
         </div>
-        <div class="ml-auto">
-            <a href="{{ url_for('user.user_management') }}" class="btn btn-info">用户管理</a>
-            <a href="{{ url_for('main.showcase') }}" class="btn btn-warning">展示页</a>
-            <a href="{{ url_for('auth.logout') }}" class="btn btn-danger">登出</a>
+        <nav>
+            <ul>
+                <li><a href="{{ url_for('user.user_management') }}">用户管理</a></li>
+                <li><a href="{{ url_for('main.showcase') }}">展示页</a></li>
+                <li><a href="{{ url_for('auth.logout') }}">登出</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-md-4 intro-section">
+                    <section class="intro">
+                        <h1>虚拟筛选过程</h1>
+                        <p>从大量化合物中筛选出潜在的药物候选物。这种方法在药物发现过程中广泛应用，可以显著加速药物开发的初步筛选阶段，降低实验成本。</p>
+                        <a href="{{ url_for('main.database_preview') }}" class="btn btn-primary">数据库预览</a>
+                    </section>
+                </div>
+                <div class="col-md-8 features-section">
+                    <div class="row">
+                        <div class="col-md-6 mb-4">
+                            <div class="feature">
+                                <div class="feature-header" onclick="location.href='{{ url_for('main.pyai_vs') }}'">
+                                    <h2>AI分类模型</h2>
+                                </div>
+                                <p>AI模型可以基于已知的生物活性、毒性、物理化学性质等对化合物进行筛选，过滤掉一些不符合要求的化合物。</p>
+                            </div>
+                        </div>
+                        <div class="col-md-6 mb-4">
+                            <div class="feature">
+                                <div class="feature-header" onclick="location.href='{{ url_for('main.l_score') }}'">
+                                    <h2>对接后重打分</h2>
+                                </div>
+                                <p>重新打分使用更精细、更准确的评分函数或其他计算方法来重新评估候选化合物的结合亲和力，排除误筛选的低亲和力化合物，保留真正具有潜力的化合物。</p>
+                            </div>
+                        </div>
+                        <div class="col-md-6 mb-4">
+                            <div class="feature">
+                                <div class="feature-header" onclick="location.href='{{ url_for('main.psearch') }}'">
+                                    <h2>药效团模型</h2>
+                                </div>
+                                <p>通过药效团模型，可以识别和筛选出那些在结构上符合特定药效团模式的化合物。这一步骤旨在找出潜在的生物活性化合物。</p>
+                            </div>
+                        </div>
+                        <div class="col-md-6 mb-4">
+                            <div class="feature">
+                                <div class="feature-header" onclick="location.href='{{ url_for('main.docking_vs') }}'">
+                                    <h2>分子对接虚拟筛选</h2>
+                                </div>
+                                <p>虚拟筛选是利用分子对接技术来筛选大型化合物库，找出那些与目标蛋白质具有高亲和力的候选化合物。</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
-    </nav>
-    <div class="content container">
-        <div class="row">
-            <div class="col-md-6 mb-4">
-                <div class="card">
-                    <h2>PyaiVS (人工智能分类模型)</h2>
-                    <p>通过人工智能实现快速准确的分类。</p>
-                    <a href="{{ url_for('main.pyai_vs') }}" class="btn btn-primary">使用AI模型分类</a>
-                </div>
-            </div>
-            <div class="col-md-6 mb-4">
-                <div class="card">
-                    <h2>Psearch (药效团模型)</h2>
-                    <p>基于药效团模型的药物搜索。</p>
-                    <a href="{{ url_for('main.psearch') }}" class="btn btn-primary">使用药效团模型搜索</a>
-                </div>
-            </div>
-            <div class="col-md-6 mb-4">
-                <div class="card">
-                    <h2>DockingVS (分子对接)</h2>
-                    <p>高效的分子对接工具。</p>
-                    <a href="{{ url_for('main.docking_vs') }}" class="btn btn-primary">使用分子对接工具</a>
-                </div>
-            </div>
-            <div class="col-md-6 mb-4">
-                <div class="card">
-                    <h2>L-Score (对接后重打分)</h2>
-                    <p>精确的对接后评分工具。</p>
-                    <a href="{{ url_for('main.l_score') }}" class="btn btn-primary">启动对接后重打分</a>
-                </div>
-            </div>
-            <div class="col-md-12 mb-4">
-                <div class="card">
-                    <h2>虚拟筛选数据库</h2>
-                    <p>查看和管理现有数据库。</p>
-                    <a href="{{ url_for('main.database_preview') }}" class="btn btn-primary">预览现有数据库</a>
-                </div>
-            </div>
-        </div>
-    </div>
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
-    <script src="https://stackpath.bootstrap.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    </main>
 </body>
 </html>

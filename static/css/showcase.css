@@ -3,11 +3,103 @@
     overflow-y: auto; /* 允许垂直滚动 */
 }
 
-body {
-    background-image: url('../images/biotech1.jpg');
-    background-size: cover;
-    background-attachment: fixed;
+.modal-body-scrollable {
+    max-height: 70vh; /* 设置最大高度，防止超出屏幕 */
+    overflow-y: auto; /* 允许垂直滚动 */
 }
+
+body {
+    margin: 0;
+    font-family: 'Arial Rounded MT Bold', sans-serif;
+    background: url('../images/tech2.jpg') no-repeat center center fixed;
+    background-size: cover;
+    color: white;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    animation: background-blur 2s ease-in-out forwards;
+}
+
+@keyframes background-blur {
+    0% {
+        filter: blur(10px);
+    }
+    100% {
+        filter: blur(0);
+    }
+}
+
+.header {
+    width: 100%;
+    padding: 10px 20px; /* 调整padding使导航栏内容向左右两边放 */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: rgba(140, 134, 134, 0.5);
+    position: fixed;
+    top: 0;
+    z-index: 10;
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+}
+
+.logo-img {
+    height: 50px; /* 调整logo的高度 */
+    margin-right: 10px;
+}
+
+.logo-text {
+    display: flex;
+    flex-direction: column;
+}
+
+.logo-text h1 {
+    margin: 0;
+    line-height: 1.2;
+    color: white;
+    font-size: 24px; /* 调整字体大小 */
+}
+
+.logo-text h2 {
+    margin: 0;
+    line-height: 1.2;
+    color: white;
+    font-size: 18px; /* 调整字体大小 */
+}
+
+.nav {
+    display: flex;
+    align-items: center;
+}
+
+.nav a {
+    color: white;
+    text-decoration: none;
+    margin-left: 20px;
+    font-size: 18px;
+    border: 2px solid white;
+    padding: 5px 15px;
+    border-radius: 5px;
+    transition: background 0.3s ease;
+}
+
+.nav a:hover {
+    background: white;
+    color: black;
+}
+
 
 .center-wrapper {
     position: relative;
@@ -15,7 +107,7 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-top: -120px; /* 向上移动整体布局 */
+    margin-top: -70px; /* 向上移动整体布局 */
 }
 
 .center-circle {
@@ -52,6 +144,14 @@ body {
     border-radius: 50%;
     object-fit: cover; /* 确保图片保持比例 */
     margin-bottom: 10px;
+    opacity: 0.7; /* 半透明 */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2), 0 6px 20px rgba(0, 0, 0, 0.19); /* 立体效果 */
+    transition: all 0.3s ease; /* 添加过渡效果 */
+}
+
+.image-circle:hover {
+    opacity: 1; /* 鼠标悬停时取消透明 */
+    transform: scale(1.05); /* 鼠标悬停时放大 */
 }
 
 .image-3 {
@@ -59,7 +159,7 @@ body {
 }
 
 .image-6 {
-    transform: translateY(150%); /* 向上移动 */
+    transform: translateY(165%); /* 向上移动 */
 }
 
 .image-9 {
@@ -68,15 +168,15 @@ body {
 
 .description {
     position: absolute;
-    background-color: rgba(255, 255, 255, 0.7);
-    color: black;
+    background-color: rgb(255, 255, 255,0.6);
+    color: #0c0c0c;
     font-family: 'Arial', sans-serif;
     border-radius: 5px;
     text-align: center;
 }
 
 .neuro-description {
-    bottom: -60px;
+    bottom: -90px;
     left: 0;
     width: 100%;
 }
@@ -88,7 +188,7 @@ body {
 }
 
 .cancer-description {
-    bottom: -70px;
+    bottom: -105px;
     left: 0;
     width: 100%;
 }
@@ -102,17 +202,17 @@ body {
 }
 
 .table th, .table td {
-    border: 1px solid #ddd;
+    border: 1px solid #ffffff;
     padding: 8px;
 }
 
 .table th {
-    background-color: #f2f2f2;
+    background-color: #ffffff;
     text-align: left;
 }
 
 .table tr:nth-child(even) {
-    background-color: #f9f9f9;
+    background-color: #ffffff;
 }
 
 .table tr:hover {
@@ -123,7 +223,7 @@ body {
     padding-top: 12px;
     padding-bottom: 12px;
     background-color: #4CAF50;
-    color: white;
+    color: #ffffff;
 }
 
 /* 调整第二列和第三列的宽度 */
@@ -148,3 +248,6 @@ body {
     z-index: 1; /* 确保中心内容在导航栏后面 */
 }
 
+#GPCRModal .modal-body {
+    color: black; /* 将字体颜色设置为黑色 */
+}

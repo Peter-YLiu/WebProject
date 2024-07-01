@@ -8,16 +8,22 @@
     <link href="{{ url_for('static', filename='css/user_profile.css') }}" rel="stylesheet">
 </head>
 <body>
-    <nav class="navbar">
-        <div class="brand">
-            <h1>bioal- global</h1>
-            <h2>贝芸科技</h2>
+    <header class="header">
+        <div class="container">
+            <div class="logo">
+                <img src="{{ url_for('static', filename='images/beiyun.png') }}" alt="Logo" class="logo-img">
+                <div class="logo-text">
+                    <h1>BioAI-global</h1>
+                    <h2>贝芸科技</h2>
+                </div>
+            </div>
+            <nav class="nav">
+                <a href="{{ url_for('main.index') }}">主页</a>
+                <a href="{{ url_for('main.dashboard') }}">功能页</a>
+                <a href="{{ url_for('auth.logout') }}">登出</a>
+            </nav>
         </div>
-        <div class="ml-auto">
-            <a href="{{ url_for('main.dashboard') }}" class="btn btn-info">功能页</a>
-            <a href="{{ url_for('auth.logout') }}" class="btn btn-danger">登出</a>
-        </div>
-    </nav>
+    </header>
     <div class="content container">
         <div class="page-box">
             <h1 class="page-title">用户信息</h1>

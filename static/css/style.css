@@ -1,7 +1,7 @@
 body {
     margin: 0;
     font-family: 'Arial Rounded MT Bold', sans-serif;
-    background: url('../images/biotech3.jpg') no-repeat center center fixed;
+    background: url('../images/tech2.jpg') no-repeat center center fixed;
     background-size: cover;
     color: white;
     height: 100vh;
@@ -25,7 +25,7 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background: rgba(0, 0, 0, 0.6);
+    background-color: rgba(140, 134, 134, 0.5);
     position: fixed;
     top: 0;
     z-index: 10;
@@ -42,18 +42,23 @@ body {
 
 .logo {
     display: flex;
+    align-items: center;
+}
+
+.logo-img {
+    height: 60px; /* 调整logo的高度 */
+    margin-right: 10px;
+}
+
+.logo-text {
+    display: flex;
     flex-direction: column;
 }
 
-.logo h1 {
+.logo-text h1,
+.logo-text h2 {
     margin: 0;
-    font-size: 36px;
-    font-weight: bold;
-}
-
-.logo h2 {
-    margin: 0;
-    font-size: 28px;
+    line-height: 1.2; /* 调整行高，使logo与文字对齐 */
 }
 
 .nav {
@@ -130,7 +135,7 @@ body {
     background: rgba(255, 255, 255, 0.8);
     border-radius: 50%;
     padding: 40px;
-    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
     width: 400px;
     height: 400px; /* 更改高度使其为正圆 */
     display: flex;

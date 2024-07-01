@@ -5,33 +5,61 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Database Preview</title>
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
     <style>
         body {
             background-color: #f8f9fa;
             color: #343a40;
+            font-family: 'Arial', sans-serif;
         }
         .container {
-            margin-top: 20px;
+            margin-top: 50px;
         }
         .card {
             margin-bottom: 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            border: none;
+        }
+        .card-header {
+            background-color: #007bff;
+            color: white;
+            padding: 20px;
+            border-top-left-radius: .25rem;
+            border-top-right-radius: .25rem;
+        }
+        .card-header h2 {
+            margin: 0;
+            font-size: 1.5rem;
+        }
+        .card-body {
+            padding: 20px;
         }
         .table {
             width: 100%;
             margin-bottom: 1rem;
             color: #212529;
+            background-color: white;
         }
         .table th, .table td {
             padding: .75rem;
-            vertical-align: top;
+            vertical-align: middle;
             border-top: 1px solid #dee2e6;
         }
         .table thead th {
             vertical-align: bottom;
             border-bottom: 2px solid #dee2e6;
+            background-color: #f1f1f1;
         }
         .table tbody + tbody {
             border-top: 2px solid #dee2e6;
+        }
+        .table-bordered {
+            border: 1px solid #dee2e6;
+            border-radius: .25rem;
+            overflow: hidden;
+        }
+        .table-striped tbody tr:nth-of-type(odd) {
+            background-color: rgba(0, 0, 0, 0.05);
         }
     </style>
 </head>
@@ -39,11 +67,11 @@
     <div class="container">
         <div class="card">
             <div class="card-header">
-                <h2>现有虚拟筛选数据库预览</h2>
+                <h2><i class="fas fa-database"></i> 现有虚拟筛选数据库预览</h2>
             </div>
             <div class="card-body">
                 <p>以下是数据库的内容：</p>
-                <table class="table table-bordered">
+                <table class="table table-bordered table-striped">
                     <thead>
                         <tr>
                             <th>编号</th>

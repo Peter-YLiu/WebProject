@@ -10,8 +10,11 @@
     <header class="header">
         <div class="container">
             <div class="logo">
-                <h1>bioai-global</h1>
-                <h2>贝芸科技</h2>
+                <img src="{{ url_for('static', filename='images/beiyun.png') }}" alt="Logo" class="logo-img">
+                <div class="logo-text">
+                    <h1>BioAI-global</h1>
+                    <h2>贝芸科技</h2>
+                </div>
             </div>
             <nav class="nav">
                 <a href="{{ url_for('auth.login') }}">登录</a>
@@ -21,7 +24,7 @@
     </header>
     <div class="hero">
         <div class="hero-content">
-            <h2>AI药物预测发现平台</h2>
+            <h2>AI药物多级虚拟筛选平台</h2>
             <p>拥有自主知识产权的核心算法，一站式完成苗头化合物发现</p>
         </div>
     </div>

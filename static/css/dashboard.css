@@ -1,108 +1,126 @@
 body {
+    font-family: Arial, sans-serif;
     margin: 0;
-    font-family: 'Arial Rounded MT Bold', sans-serif;
-    background: url('../images/biotech1.jpg') no-repeat center center fixed;
+    padding: 0;
+    background: url("../images/tech.jpg") no-repeat center center fixed;
     background-size: cover;
-    color: white;
-    height: 100vh;
-    display: flex;
-    flex-direction: column;
-    animation: background-blur 2s ease-in-out forwards;
 }
 
-@keyframes background-blur {
-    0% {
-        filter: blur(10px);
-    }
-    100% {
-        filter: blur(0);
-    }
-}
-
-.navbar {
-    width: 100%;
-    padding: 10px 0;
+header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background: rgba(0, 0, 0, 0.6);
-    position: fixed;
-    top: 0;
-    z-index: 10;
+    background-color: rgba(255, 255, 255, 0.6); /* 使导航栏半透明 */
+    padding: 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
-.brand {
+.logo {
     display: flex;
-    flex-direction: column;
+    align-items: center;
 }
 
-.brand h1 {
+.logo img {
+    height: 40px;
+    margin-right: 10px;
+}
+
+nav ul {
+    list-style: none;
     margin: 0;
-    font-size: 36px;
+    padding: 0;
+    display: flex;
+}
+
+nav li {
+    margin-left: 20px;
+}
+
+nav a {
+    text-decoration: none;
+    color: #333;
     font-weight: bold;
 }
 
-.brand h2 {
-    margin: 0;
-    font-size: 28px;
-}
-
-.navbar a {
-    color: white;
-    text-decoration: none;
-    margin-left: 20px;
-    font-size: 18px;
-    border: 2px solid white;
-    padding: 5px 15px;
-    border-radius: 5px;
-    transition: background 0.3s ease;
-}
-
-.navbar a:hover {
-    background: white;
-    color: black;
-}
-
-.content {
-    margin-top: 100px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-}
-
-.card {
-    background: rgba(255, 255, 255, 0.8);
-    border-radius: 15px;
+main {
     padding: 20px;
-    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+}
+
+.intro-section {
+    background-color: rgba(255, 255, 255, 0.6);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     text-align: center;
-    width: 100%;
-    max-width: 500px;
-    margin: 10px;
+    height: 550px;
 }
 
-.card h2 {
-    font-size: 24px;
-    color: #000;
+.intro h1 {
+    font-size: 2.5em;
+    color: #333;
 }
 
-.card p {
-    font-size: 16px;
-    color: #000;
+.intro p {
+    font-size: 1.2em;
+    color: #666;
+    margin-top: 20px;
 }
 
-.card a {
-    font-size: 20px;
-    color: white;
-    text-decoration: none;
-    background: #837f7f;
+.intro .btn {
+    background-color: #333;
+    color: #fff;
+    border: none;
     padding: 10px 20px;
+    font-size: 1em;
+    cursor: pointer;
     border-radius: 5px;
-    display: block;
-    transition: background 0.3s ease;
+    transition: background-color 0.3s;
+    text-decoration: none;
+    margin-top: 20px;
 }
 
-.card a:hover {
-    background: #3f3f3f;
+.intro .btn:hover {
+    background-color: #555;
+}
+
+.features-section {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    height: 100%;
+}
+
+.feature {
+    background-color: rgba(255, 255, 255, 0.6);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    flex: 1 1 calc(50% - 20px); /* 50% 宽度，减去间距 */
+    box-sizing: border-box;
+    text-align: center;
+    height: 260px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.feature-header {
+    background-color: #ead1b5;
+    padding: 10px;
+    border-radius: 10px 10px 0 0;
+    margin-bottom: 20px;
+    cursor: pointer;
+}
+
+.feature h2 {
+    font-size: 1.5em;
+    color: #333;
+    margin: 0;
+}
+
+.feature p {
+    font-size: 1em;
+    color: #666;
+    margin-top: 5px; /* 调整这个值以减少距离 */
+    margin-bottom: auto;
 }

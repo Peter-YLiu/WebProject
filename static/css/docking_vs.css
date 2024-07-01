@@ -1,5 +1,5 @@
 body {
-    background-image: url('/static/images/biotech.jpg');
+    background-image: url('/static/images/tech.jpg');
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
@@ -7,30 +7,77 @@ body {
     font-family: Arial, sans-serif;
 }
 
-.navbar {
-    background-color: rgba(0, 0, 0, 0.7);
-    padding: 10px 20px;
-    position: fixed;
+.header {
     width: 100%;
+    padding: 10px 20px; /* 调整padding使导航栏内容向左右两边放 */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: rgba(140, 134, 134, 0.5);
+    position: fixed;
     top: 0;
-    z-index: 1000;
+    z-index: 10;
 }
 
-.navbar h1, .navbar h2 {
-    margin: 0;
-    font-family: 'Arial Rounded MT Bold', sans-serif;
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
-.navbar .brand {
+.logo {
+    display: flex;
+    align-items: center;
+}
+
+.logo-img {
+    height: 50px; /* 调整logo的高度 */
+    margin-right: 10px;
+}
+
+.logo-text {
     display: flex;
     flex-direction: column;
 }
 
-.navbar a {
+.logo-text h1 {
+    margin: 0;
+    line-height: 1.2;
+    color: white;
+    font-size: 24px; /* 调整字体大小 */
+}
+
+.logo-text h2 {
+    margin: 0;
+    line-height: 1.2;
+    color: white;
+    font-size: 18px; /* 调整字体大小 */
+}
+
+.nav {
+    display: flex;
+    align-items: center;
+}
+
+.nav a {
     color: white;
     text-decoration: none;
     margin-left: 20px;
+    font-size: 18px;
+    border: 2px solid white;
+    padding: 5px 15px;
+    border-radius: 5px;
+    transition: background 0.3s ease;
 }
+
+.nav a:hover {
+    background: white;
+    color: black;
+}
+
 
 .content {
     margin-top: 100px;

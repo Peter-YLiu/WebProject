@@ -8,19 +8,28 @@
     <link href="{{ url_for('static', filename='css/showcase.css') }}" rel="stylesheet"/>
 </head>
 <body>
-<nav class="navbar navbar-expand-lg" style="background: rgba(50, 50, 50, 0.7);">
-    <div class="brand">
-        <h1 style="color: white;">bioal-global</h1>
-        <h2 style="color: white;">贝芸科技</h2>
+<header class="header">
+    <div class="container">
+        <div class="logo">
+            <img src="{{ url_for('static', filename='images/beiyun.png') }}" alt="Logo" class="logo-img">
+            <div class="logo-text">
+                <h1>BioAI-global</h1>
+                <h2>贝芸科技</h2>
+            </div>
+        </div>
+        <nav class="nav">
+            <a href="{{ url_for('main.index') }}">主页</a>
+            <a href="{{ url_for('main.dashboard') }}">功能页</a>
+            <a href="{{ url_for('auth.logout') }}">登出</a>
+        </nav>
     </div>
-    <div class="ml-auto">
-        <a class="btn btn-info" href="{{ url_for('main.dashboard') }}">功能页</a>
-        <a class="btn btn-danger" href="{{ url_for('auth.logout') }}">登出</a>
-    </div>
-</nav>
+</header>
+
+
+
 <div class="center-wrapper">
     <div class="center-circle">
-        <img alt="主题" class="circle-img" src="{{ url_for('static', filename='images/central.jpg') }}"/>
+        <img alt="主题" class="circle-img" src="{{ url_for('static', filename='images/showcase.jpg') }}"/>
     </div>
     <div class="outer-image image-3">
         <img alt="神经系统性疾病" class="image-circle" src="{{ url_for('static', filename='images/neuro.jpg') }}"/>
